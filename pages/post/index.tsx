@@ -14,7 +14,7 @@ export default function PostPage({ posts }: PostPageProps) {
             <ul>
                 {posts.map(post => <li key={post.id}>
                     <Link href={`/post/${post.id}`}>
-                        <p>{post.id} - {post.post_title}</p>
+                        <p>{post.id} - {post.title}</p>
                     </Link>
                 </li>)}
             </ul>
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async (context: Get
     console.log('static props')
     // server side và chỉ chạy lúc build time
     // do function này chạy phía server nên có thể xem nó là 1 node  nhỏ có thể query data 
-    const response = await fetch('https://64a65fcb096b3f0fcc7fa31a.mockapi.io/post');
+    const response = await fetch('https://js-post-api.herokuapp.com/api/posts?page=1');
     const data = await response.json()
     console.log({ data })
     return {
