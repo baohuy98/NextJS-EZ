@@ -19,7 +19,7 @@ const Home: NextPageWithLayout = () => {
     })
   }
   return (
-    <MainLayout>
+    <div>
       <div className={styles.container}>
         <Head>
           <title>Demo Nextjs</title>
@@ -86,7 +86,7 @@ const Home: NextPageWithLayout = () => {
           </a>
         </footer>
       </div>
-    </MainLayout>
+    </div>
   )
 }
 
