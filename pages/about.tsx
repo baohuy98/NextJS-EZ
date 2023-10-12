@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 import React, { use, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { MainLayout } from '@/components/layout';
-
+import { AdminLayout, } from '@/components/layout';
+import { Box, Typography } from '@mui/material'
 export interface AboutPageProps {
 }
-const Header = dynamic(() => import('@/components/common/Header'), { ssr: true })
+const Header: any = dynamic(() => import('@/components/common/Header'), { ssr: true })
 
 export default function AboutPage(props: AboutPageProps) {
     const router = useRouter()
@@ -29,20 +29,23 @@ export default function AboutPage(props: AboutPageProps) {
         }, undefined, { shallow: true })
     }
     return (
-        <div>
-            <h1>  About Page</h1>
+        <Box>
+            <Typography component='h1' variant='h3' color='primary.main'>
+                About Page
+            </Typography>
             <Header />
-
-
             <ul className='post-list'>
                 {postList.map((post: any) => <li key={post.id}>{post.title}</li>)}
             </ul>
             <button onClick={handleNextClick}>next page</button>
-        </div>
+        </Box>
     );
 }
 
-AboutPage.Layout = MainLayout
+AboutPage.Layout = AdminLayout
+
+
+
 export async function getStaticProps() {
     console.log('get static props')
     return {
