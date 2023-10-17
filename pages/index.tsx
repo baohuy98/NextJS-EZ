@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { MainLayout } from '@/components/layout'
 import { NextPageWithLayout } from '../models'
-
 const Home: NextPageWithLayout = () => {
   const router = useRouter()
   function goToDetailPage() {
@@ -43,35 +42,58 @@ const Home: NextPageWithLayout = () => {
           <button onClick={goToDetailPage}>Go to post detail</button>
 
           <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h2>Documentation &rarr;</h2>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
+            <div className='bg-black'>
+              <div className="box-of-star1">
+                <div className="star star-position1" />
+                <div className="star star-position2" />
+                <div className="star star-position3" />
+                <div className="star star-position4" />
+                <div className="star star-position5" />
+                <div className="star star-position6" />
+                <div className="star star-position7" />
+              </div>
+              <div className="box-of-star2">
+                <div className="star star-position1" />
+                <div className="star star-position2" />
+                <div className="star star-position3" />
+                <div className="star star-position4" />
+                <div className="star star-position5" />
+                <div className="star star-position6" />
+                <div className="star star-position7" />
+              </div>
+              <div className="box-of-star3">
+                <div className="star star-position1" />
+                <div className="star star-position2" />
+                <div className="star star-position3" />
+                <div className="star star-position4" />
+                <div className="star star-position5" />
+                <div className="star star-position6" />
+                <div className="star star-position7" />
+              </div>
+              <div className="box-of-star4">
+                <div className="star star-position1" />
+                <div className="star star-position2" />
+                <div className="star star-position3" />
+                <div className="star star-position4" />
+                <div className="star star-position5" />
+                <div className="star star-position6" />
+                <div className="star star-position7" />
+              </div>
+              <div data-js="astro" className="astronaut">
+                <div className="head" />
+                <div className="arm arm-left" />
+                <div className="arm arm-right" />
+                <div className="body">
+                  <div className="panel" />
+                </div>
+                <div className="leg leg-left" />
+                <div className="leg leg-right" />
+                <div className="schoolbag" />
+              </div>
+            </div>
 
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h2>Learn &rarr;</h2>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className={styles.card}
-            >
-              <h2>Examples &rarr;</h2>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-            <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h2>Deploy &rarr;</h2>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
           </div>
         </main>
-
         <footer className={styles.footer}>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
