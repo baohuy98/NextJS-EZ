@@ -1,21 +1,19 @@
-import { Roboto } from "next/font/google";
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
-const roboto = Roboto({
-    weight: ["300", "400", "500", "700"],
-    subsets: ["latin"],
-    display: "swap",
-});
-
 // Create a theme instance.
-export const theme = createTheme({
+export let theme = createTheme({
+    typography: {
+        fontFamily: 'Heebo, sans-serif',
+
+    },
     palette: {
         primary: {
             main: "#FF6464",
         },
         secondary: {
             main: "#00A8CC",
+            light: "#EDF7FA"
         },
         error: {
             main: red.A400,
@@ -42,8 +40,42 @@ export const theme = createTheme({
             },
             variants: [],
         },
+        MuiLink: {
+            defaultProps: {
+                underline: 'hover'
+            },
+            styleOverrides: {
+                root: {
+                    color: "black",
+                    '&:hover, &.active': {
+                        color: '#FF6464'
+                    }
+                }
+            }
+        },
+        MuiButton: {
+            variants: [
+                {
+                    props: { variant: 'contained', color: 'primary' },
+                    style: {
+                        color: 'white'
+                    }
+                }
+            ]
+        }
     },
-    typography: {
-        fontFamily: roboto.style.fontFamily,
-    },
+
 });
+
+
+theme = responsiveFontSizes(theme)
+
+
+
+// theme.typography.h3 = {
+//     fontSize: '2rem',
+
+//     [theme.breakpoints.up('md')]: {
+//         fontSize: '3rem'
+//     }
+// }
