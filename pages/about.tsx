@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { AdminLayout, } from '@/components/layout';
 import { Box, Typography } from '@mui/material'

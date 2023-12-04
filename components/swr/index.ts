@@ -1,1 +1,1 @@
-import * from './StudentDetail'
+// import * from './StudentDetail'  

@@ -8,35 +8,45 @@ import {
 import * as React from "react";
 import Link from "next/link";
 import PostCard from "./post-card";
-import { Post } from "@/models";
-export interface RecentPostsProps { }
+import { Work } from "@/models";
+export interface FeatureWorksProps { }
 
-export default function RecentPosts(props: RecentPostsProps) {
+export default function FeatureWorks(props: FeatureWorksProps) {
 
-    const postList: Post[] = [
+    const postList: Work[] = [
         {
             id: "1",
             title: "Making a design system from scratch",
-            publishedDate: "1648363391671",
+            createAt: "1648363391671",
+            updatedAt: " 1648363391671",
             tagList: ["Design", "Pattern"],
-            description:
+            thumbnailUrl: '',
+            shortDescription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex natus at eveniet est nulla minima unde quam sapiente. Numquam voluptates quasi voluptatibus voluptatum corporis, consectetur soluta placeat amet reiciendis nisi!",
+            fullDescription:
+                "orem ipsum dolor sit amet consectetur adipisicing elit. Ex natus at eveniet est nulla minima unde quam sapiente. Numquam voluptates quasi voluptatibus voluptatum corporis, consectetur soluta placeat amet reiciendis nisi!"
         },
         {
-            id: "2",
-            title: "Creating pixel perfect icons in Figma",
-            publishedDate: "1648363391671",
-            tagList: ["Figma", "Icon Design"],
-            description:
+            id: "1",
+            title: "Making a design system from scratch",
+            createAt: "1648363391671",
+            updatedAt: " 1648363391671",
+            tagList: ["Design", "Pattern"],
+            thumbnailUrl: '',
+            shortDescription:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex natus at eveniet est nulla minima unde quam sapiente. Numquam voluptates quasi voluptatibus voluptatum corporis, consectetur soluta placeat amet reiciendis nisi!",
+            fullDescription:
+                "orem ipsum dolor sit amet consectetur adipisicing elit. Ex natus at eveniet est nulla minima unde quam sapiente. Numquam voluptates quasi voluptatibus voluptatum corporis, consectetur soluta placeat amet reiciendis nisi!"
         },
 
 
     ];
 
     return (
-        <Box component="section" bgcolor="secondary.light" pt={2} pb={4}>
+        <Box component="section" pt={2} pb={4}>
             <Container>
+                <Typography variant="h5">Featured Work</Typography>
+
                 <Stack
                     direction="row"
                     mb={2}
@@ -75,11 +85,11 @@ export default function RecentPosts(props: RecentPostsProps) {
                         },
                     }}
                 >
-                    {postList.map(post => (
+                    {/* {postList.map(post => (
                         <Box key={post.id}>
                             <PostCard post={post} />
                         </Box>
-                    ))}
+                    ))} */}
 
                 </Stack>
             </Container>

@@ -1,5 +1,5 @@
 import { Post } from "@/models/post";
-import { Card, CardContent, Divider, Typography } from "@mui/material";
+import { Card, CardContent, Divider, Stack, Typography } from "@mui/material";
 import * as React from "react";
 import { format } from 'date-fns'
 
@@ -15,16 +15,11 @@ export default function PostCard({ post }: PostCardProps) {
                 <Typography variant="h5" fontWeight="bold">
                     {post.title}
                 </Typography>
-                <Typography
-                    variant="body1"
-                    my={2}
-                    sx={{
-                        display: "flex",
-                    }}
-                >
 
-                    {format(Number(post.publishedDate), 'dd MMM yyyy')}
-
+                <Stack direction='row' my={2}>
+                    <Typography>
+                        {format(Number(post.publishedDate), 'dd MMM yyyy')}
+                    </Typography>
                     <Divider
                         orientation="vertical"
                         sx={{
@@ -32,9 +27,12 @@ export default function PostCard({ post }: PostCardProps) {
                         }}
                         flexItem
                     />
+                    <Typography>
+                        {post.tagList.join(", ")}
+                    </Typography>
+                </Stack>
 
-                    {post.tagList.join(", ")}
-                </Typography>
+
 
                 <Typography variant="body2">{post.description}</Typography>
             </CardContent>

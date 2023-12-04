@@ -4,6 +4,7 @@ import { NextPageWithLayout } from "../models";
 import { Box } from "@mui/system";
 import HeroSection from "@/components/home/Hero";
 import RecentPosts from "@/components/home/recent-posts";
+import FeatureWorks from "@/components/home/featured-work";
 
 const Home: NextPageWithLayout = () => {
 
@@ -11,6 +12,7 @@ const Home: NextPageWithLayout = () => {
     <Box>
       <HeroSection />
       <RecentPosts />
+      <FeatureWorks />
     </Box>
   )
 };
