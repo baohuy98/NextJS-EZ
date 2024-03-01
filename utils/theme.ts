@@ -5,7 +5,6 @@ import { red } from "@mui/material/colors";
 export let theme = createTheme({
     typography: {
         fontFamily: 'Heebo, sans-serif',
-
     },
     palette: {
         primary: {
@@ -64,7 +63,6 @@ export let theme = createTheme({
             ]
         }
     },
-
 });
 
 
